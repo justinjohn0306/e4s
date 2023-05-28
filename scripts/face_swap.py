@@ -147,7 +147,7 @@ def swap_comp_style_vector(style_vectors1, style_vectors2, comp_indices=[], belo
     
 
 @torch.no_grad()
-def faceSwapping_pipeline(source, target, opts, save_dir, target_mask=None, need_crop = False, verbose = False, only_target_crop=False):
+def faceSwapping_pipeline(source, target, opts, save_dir, target_mask=None, need_crop = True, verbose = False, only_target_crop=False):
     """
     The overall pipeline of face swapping:
 
@@ -386,5 +386,5 @@ if __name__ == "__main__":
     # NOTICE !!!
     # Please consider the `need_crop` parameter accordingly for your test case, default with well aligned faces
     faceSwapping_pipeline(opts.source, opts.target, opts, save_dir=opts.output_dir, 
-                          target_mask = target_mask_seg12, need_crop = False, verbose = opts.verbose) 
+                          target_mask = target_mask_seg12, need_crop = True, verbose = opts.verbose) 
     
