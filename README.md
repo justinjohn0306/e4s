@@ -47,6 +47,14 @@ Please check the [installation Doc](./INSTALLATION.md) for the guidance.
 ### 2.1 face swapping 
 #### Face swapping in defult settings:
 ```sh
+set DISTUTILS_USE_SDK=1
+
+%comspec% /k "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+set PYTHONPATH=.
+
+set CUDA_VISIBLE_DEVICES=0
+
 python scripts/face_swap.py --source=example/input/faceswap/source.jpg --target=example/input/faceswap/target.jpg
 ```
 The reuslts will be saved to `example/output/faceswap` folder. Left to right: source, target, swapped face
@@ -56,11 +64,15 @@ The reuslts will be saved to `example/output/faceswap` folder. Left to right: so
 
 You can optionally provide the face parsing result of the target image via `--target_mask` arg, and turn on the `--verbose=True` for detailed visulization. The results will be saved in the `--output_dir` folder (default to `example/output/faceswap`). 
 ```sh
-python scripts/face_swap.py \
-      --source=./example/input/faceswap/source.jpg \
-      --target=./example/input/faceswap/target.jpg \
-      --target_mask=./example/input/faceswap/target_mask.png \
-      --verbose=True
+set DISTUTILS_USE_SDK=1
+
+%comspec% /k "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+set PYTHONPATH=.
+
+set CUDA_VISIBLE_DEVICES=0
+
+python scripts/face_swap.py --source=./example/input/faceswap/source.jpg --target=./example/input/faceswap/target.jpg --target_mask=./example/input/faceswap/target_mask.png --verbose=True
 ```
 It's recommanded to turn on `--lap_bld` for better result around the face boundary. 
 
@@ -71,11 +83,15 @@ For more information and supported args, run `python scripts/face_swap.py -h` fo
 ### 2.2 face editing 
 For texture related editting or interpolation, run 
 ```sh
-python scripts/face_edit.py \
-      --source=./example/input/faceedit/source.jpg \
-      --reference=./example/input/faceedit/reference.jpg \
-      --region hair eyes \
-      --alpha=1
+set DISTUTILS_USE_SDK=1
+
+%comspec% /k "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+set PYTHONPATH=.
+
+set CUDA_VISIBLE_DEVICES=0
+
+python scripts/face_edit.py --source=./example/input/faceedit/source.jpg --reference=./example/input/faceedit/reference.jpg --region hair eyes --alpha=1
 ```
 
 The reuslts will be saved to `example/output/faceedit` folder. 
@@ -85,7 +101,15 @@ The reuslts will be saved to `example/output/faceedit` folder.
 
 For shape related editing, we provide an interactive editing demo that was build upon graido, just run 
 ```sh
-python demo/gradio_demo.py
+set DISTUTILS_USE_SDK=1
+
+%comspec% /k "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
+
+set PYTHONPATH=.
+
+set CUDA_VISIBLE_DEVICES=0
+
+python demo/gradio_demo_win.py
 ```
 
 
